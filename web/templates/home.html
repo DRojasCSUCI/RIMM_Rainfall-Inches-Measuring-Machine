@@ -1,0 +1,21 @@
+<html>
+   <head>
+      <title>Home</title>
+      <style>
+         body {text-align:center;margin-left:auto;margin-right:auto;}
+         a {padding: 0px 10px;}
+      </style>
+   <body>
+      <h1>Welcome!</h1>
+      <h1>RIMM HOME PAGE<br><br></h1>
+      <h3>Click on any link to see interesting data being visualized<br></h3>
+      <p font-size:16;>
+         Sensor #1: 
+         <a href="{{ url_for('chart') }}">30-Day Chart</a> 
+         <a href="{{ url_for('graph') }}">30-Day Graph</a> 
+         <a href="{{ url_for('live') }}">Live Reading</a> 
+         <a href="{{ url_for('today') }}">Today's Data</a>
+      </p>
+   </body>
+   </head>
+</html>

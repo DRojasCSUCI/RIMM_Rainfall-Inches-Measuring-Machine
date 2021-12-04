@@ -1,0 +1,29 @@
+<html>
+
+    <head>
+        <title> Water Level Sensor #1 </title>
+        <style>
+            h1 {text-align:center;margin-left:auto;margin-right:auto;}
+            h2 {text-align:center;margin-left:auto;margin-right:auto;}
+            h3 {text-align:center;margin-left:auto;margin-right:auto;}
+        </style>
+    </head>
+
+    <body>
+        <p text-align:"left"; font-size:14;><a href="{{url_for('home')}}">Go Back</a></p>
+        <h1>Water Level Sensor #1</h1>
+
+        <h2>
+            Latest Measurement <br>
+            ({{delay}} Second Delay Between Readings)  
+        </h2>
+
+        <h3>
+            Rainfall(Inches) = {{liveData[0]}}<br><br>
+            Date-Time = {{liveData[1]}} 
+        </h3>
+
+
+    </body>
+
+</html>

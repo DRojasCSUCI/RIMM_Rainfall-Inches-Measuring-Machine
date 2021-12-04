@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <style>
+        h1 {text-align:center;margin-left:auto;margin-right:auto;}
+        table {text-align: center;}
+        th {padding: 0 15px; border-style: solid;}
+        td {padding: 0 15px; border-style: ridge;}
+    </style>
+</head>
+
+<body>
+    <p text-align:"left"; font-size:14;><a href="{{url_for('home')}}">Go Back</a></p>
+    <h1>Current Rainfall Data for Today</h1>
+    
+    <table style="margin-left:auto;margin-right:auto;">
+    
+        <tr>
+            <th>Rainfall(Inches)</th>
+            <th>Date-Time</th>
+        </tr>
+        
+        {% for row in dailyData %}
+        <tr>
+            <td>{{ row[0] }}</td>
+	    <td>{{ row[1] }}</td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+
+</body>
+
+</html>

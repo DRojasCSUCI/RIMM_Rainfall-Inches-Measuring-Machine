@@ -1,0 +1,69 @@
+<html>
+
+    <head>
+        <title> Water Level Sensor #1 </title>
+        <style>
+            h1 {text-align:center;margin-left:auto;margin-right:auto;}
+        </style>
+    </head>
+
+    <body>
+
+        <p text-align:"left"; font-size:14;><a href="{{url_for('home')}}">Go Back</a></p>
+        <h1>Water Level Sensor #1</h1>
+        <div align="center">
+        
+           <script src="static/Chart.min.js"></script>
+           <canvas id="chart" width="1200" height="800"></canvas>
+           <script>
+              
+              // bar chart data
+              var barData = {
+                 labels : {{labels|tojson}},
+                 datasets : [{
+                     fillColor: "rgba(151,187,205,0.2)",
+                     strokeColor: "rgba(151,187,205,1)",
+                     pointColor: "rgba(151,187,205,1)",
+                     pointStrokeColor: "#fff",
+                     pointHighlightFill: "#fff",
+                     pointHighlightStroke: "rgba(151,187,205,1)",
+                     bezierCurve : false,
+                     data : {{values|tojson}} }]
+              }
+
+              Chart.defaults.global.animationSteps = 50;
+              Chart.defaults.global.tooltipYPadding = 16;
+              Chart.defaults.global.tooltipCornerRadius = 0;
+              Chart.defaults.global.tooltipTitleFontStyle = "normal";
+              Chart.defaults.global.tooltipFillColor = "rgba(0,0,0,0.8)";
+              Chart.defaults.global.animationEasing = "easeOutBounce";
+              Chart.defaults.global.responsive = false;
+              Chart.defaults.global.scaleLineColor = "black";
+              Chart.defaults.global.scaleFontSize = 16;
+          
+              // get bar chart canvas
+              var mychart = document.getElementById("chart").getContext("2d");
+              steps = 5;
+              max = 5;
+             
+             // draw bar chart
+             var LineChartDemo = new Chart(mychart).Line(barData, {
+                 scaleOverride: true,
+                 scaleSteps: steps,
+                 scaleStepWidth: Math.ceil(max / steps),
+                 scaleStartValue: 0,
+                 scaleShowVerticalLines: true,
+                 scaleShowGridLines : true,
+                 barShowStroke : true,
+                 scaleShowLabels: true,
+                 bezierCurve: false
+             });
+        
+           </script>        
+
+        </div>
+                
+    </body>
+
+</html>
+
