@@ -19,8 +19,7 @@
 2- Navigate to “web” folder within Raspberry Pi and run one of the two following commands:
 `flask run` OR `python3 app.py`
 
-3- Using a web browser within your Raspberry Pi, type in one of the two following  addresses:
-[127.0.0.1:5000](127.0.0.1:5000) OR [localhost:5000](localhost:5000)
+3- Using a web browser within your Raspberry Pi, type in the following address: [localhost:5000](localhost:5000)
 
  (NOTE: Delay between measurements is 60 seconds, but it can be changed simply by updating SLEEP_DELAY in the 'waterlevel' python scirpt. You must rrstart the server for it to take effect)
 
