@@ -14,7 +14,7 @@ import csv
 CSV_FILE_PATH = "./data/present_daily_readings.csv"
 
 #Delay Between Readings In Seconds (1 Hour = 3600 Seconds) (10 Min = 600 Seconds)
-SLEEP_DELAY = 60
+SLEEP_DELAY = 10
 
 #Water Level Detector ADC Chip Channel (Channels: 0..8)
 ADC_CHANNEL = 0
@@ -111,7 +111,7 @@ def main(queue, lock):
 
         #Receive Data
         rawData = getData()
-        percentData = min( (rawData/MAX_RAW)*100, 100.0 )
+        percentData = min(rawData/MAX_RAW, 1.0)
         inchData = percentData * INCH_CALIBRATION_CONST
 
         #Print Data to Console
@@ -149,6 +149,3 @@ if __name__ == '__main__':
         main()
     except KeyboardInterrupt:
         GPIO.cleanup()
-
-
-
